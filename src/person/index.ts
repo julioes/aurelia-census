@@ -33,6 +33,8 @@ export class DemographicPerson {
     switch (this.question) {
       case 'name':
         return !this.person.isNameValid;
+      case 'sex':
+        return !this.person.isSexValid;
       default:
         return true;
     }
@@ -46,6 +48,10 @@ export class DemographicPerson {
       case 'name':
         if (this.person.isNameValid) {
           this.router.navigateToRoute('person', {index: this.index, question: 'sex'});
+        }
+      case 'sex':
+        if (this.person.isSexValid) {
+          this.router.navigateToRoute('person', {index: this.index, question: 'age'});
         }
       default:
         return false;

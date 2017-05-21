@@ -1,0 +1,33 @@
+<template>
+  <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Person ${index}</h2>
+      <p class="usa-font-lead">
+        What is Person ${index}'s sex?
+      </p>
+      <form class="usa-form">
+        <div class="${!displayError ? '' : 'usa-input-error'}">
+          <fieldset class="usa-fieldset-inputs usa-sans">
+            <legend class="usa-sr-only">Mark ONE box</legend>
+            <span class="usa-input-error-message" role="alert" id="homeOwnership-message"
+              if.bind="displayError">Mark ONE box</span>
+            <ul class="usa-unstyled-list household-list">
+              <li>
+                <input id="male" type="radio" name="sex" value="male"
+                  checked.bind="person.sex">
+                <label for="male">Male</label>
+              </li>
+              <li>
+                <input id="female" type="radio" name="sex" value="female"
+                  checked.bind="person.sex">
+                <label for="female">Female</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <input type="submit" value="Next" click.delegate="save()"
+          class="usa-button-primary">
+      </form>
+    </div>
+  </section>
+</template>
