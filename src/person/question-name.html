@@ -1,0 +1,33 @@
+<template>
+    <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Person ${index}</h2>
+      <p class="usa-font-lead">
+        What is Person ${index}'s name?
+      </p>
+      <form class="usa-form">
+        <div class="${!displayError ? '' : 'usa-input-error'}">
+          <fieldset>
+            <label for="firstName" class="usa-input-required ${!displayError ? '' : 'usa-input-error-label'}">First name</label>
+            <span class="usa-input-error-message" role="alert" id="popcount-message"
+              if.bind="displayError">Please provide a positive number</span>
+            <input id="firstName" name="firstName" type="text" required="" aria-required="true"
+              value.bind="person.firstName">
+
+            <label for="middleInitial" class="${!displayError ? '' : 'usa-input-error-label'}">Middle initial</label>
+            <input id="middleInitial" name="middleInitial" type="text" length="1"
+              value.bind="person.middleInitial">
+
+            <label for="lastName" class="usa-input-required ${!displayError ? '' : 'usa-input-error-label'}">Last name</label>
+            <span class="usa-input-error-message" role="alert" id="popcount-message"
+              if.bind="displayError">Please provide a positive number</span>
+            <input id="lastName" name="lastName" type="text" required="" aria-required="true"
+              value.bind="person.lastName">
+          </fieldset>
+        </div>
+        <input type="submit" value="Next" click.delegate="save()"
+          class="usa-button-primary">
+      </form>
+    </div>
+  </section>
+</template>

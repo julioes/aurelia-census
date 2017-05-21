@@ -4,9 +4,9 @@ import {DataStore} from '../data-store';
 
 @inject(Router, DataStore)
 export class Household {
-  isSubmitted: boolean;
+  isSubmitted: boolean = false;
 
-  question: number;
+  question: number = 1;
 
   constructor(private router: Router, private dataStore: DataStore) {  }
 
@@ -17,7 +17,7 @@ export class Household {
       this.question = 1;
     }
 
-    routeConfig.navModel.setTitle('Household Questions');
+    routeConfig.navModel.setTitle('Household');
 
     return Promise.resolve();
   }
@@ -45,7 +45,11 @@ export class Household {
     this.isSubmitted = true;
     
     if (this.isValid) {
-      this.router.navigateToRoute('household', {question: this.question+1});
+      if (this.question === 4 ) {
+        this.router.navigateToRoute('demographics');
+      } else {
+        this.router.navigateToRoute('household', {question: this.question+1});
+      }
     }
   };
 }
