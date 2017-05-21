@@ -1,0 +1,44 @@
+<template>
+  <require from="./household.css"></require>
+  <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Question 3</h2>
+      <p class="usa-font-lead">
+        Is this house, apartment, or mobile home —
+      </p>
+      <form class="usa-form">
+        <div class="${!displayError ? '' : 'usa-input-error'}">
+          <fieldset class="usa-fieldset-inputs usa-sans">
+            <legend class="usa-sr-only">Mark ONE box</legend>
+            <span class="usa-input-error-message" role="alert" id="homeOwnership-message"
+              if.bind="displayError">Mark ONE box</span>
+            <ul class="usa-unstyled-list household-list">
+              <li>
+                <input id="loaned" type="radio" name="homeOwnership" value="loaned"
+                  checked.bind="dataStore.homeOwnership">
+                <label for="loaned">Owned by you or someone in this household with a mortgage or load? Include home equity loans.</label>
+              </li>
+              <li>
+                <input id="owned" type="radio" name="homeOwnership" value="owned"
+                  checked.bind="dataStore.homeOwnership">
+                <label for="owned">Owned by you or someone in this household free and clear (without a mortgage or load)?</label>
+              </li>
+              <li>
+                <input id="rented" type="radio" name="homeOwnership" value="rented"
+                  checked.bind="dataStore.homeOwnership">
+                <label for="rented">Rented?</label>
+              </li>
+              <li>
+                <input id="occupied" type="radio" name="homeOwnership" value="occupied"
+                  checked.bind="dataStore.homeOwnership">
+                <label for="occupied">Occupied without payment or rent?</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <input type="submit" value="Next" click.delegate="save()"
+          class="usa-button-primary">
+      </form>
+    </div>
+  </section>
+</template>
