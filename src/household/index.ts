@@ -13,7 +13,7 @@ export class Household {
   activate(params: any, routeConfig: RouteConfig): Promise<any> {
     this.isSubmitted = false;
     this.question = Number(params.question || 1);
-    if (this.question < 1 || this.question > 3) {
+    if (this.question < 1 || this.question > 4) {
       this.question = 1;
     }
 
@@ -34,6 +34,8 @@ export class Household {
         return this.dataStore.additionalPeople.length > 0;
       case 3:
         return this.dataStore.homeOwnership !== "";
+      case 4:
+        return this.dataStore.phoneNumber !== "";
       default:
         return false;
     }    

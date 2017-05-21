@@ -1,0 +1,25 @@
+<template>
+    <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Question 4</h2>
+      <form class="usa-form">
+        <fieldset>
+          <legend>What is your telephone number?</legend>
+          <span class="usa-form-hint" id="phoneNumberHint">
+            We may call if we don't understand an answer.
+          </span>
+          <div class="${!displayError ? '' : 'usa-input-error'}">
+            <label for="phoneNumber" class="${!displayError ? '' : 'usa-input-error-label'}">Area Code + Number</label>
+            <span class="usa-input-error-message" role="alert" id="phoneNumber-message"
+              if.bind="displayError">Please provide a phone number</span>
+            <input class="usa-input-inline usa-form-control" aria-describedby="phoneNumberHint"
+              id="phoneNumber" name="phoneNumber" type="tel" pattern="[0-9]{10}"
+              value.bind="dataStore.phoneNumber">
+          </div>
+        </fieldset>
+        <input type="submit" value="Next" click.delegate="save()"
+          class="usa-button-primary">
+      </form>
+    </div>
+  </section>
+</template>

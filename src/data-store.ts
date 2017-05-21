@@ -4,4 +4,6 @@ export class DataStore {
   additionalPeople: string[] = [];
 
   homeOwnership: string = "";
+
+  phoneNumber: string = "";
 }
