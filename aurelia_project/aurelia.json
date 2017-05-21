@@ -132,9 +132,19 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
+          },
+          {
+            "name": "uswds",
+            "path": "../node_modules/uswds/dist",
+            "main": "js/uswds.min"
           }
         ]
       }
-    ]
+    ],
+    "copyFiles": {
+      "node_modules/uswds/dist/css/*": "uswds/css",
+      "node_modules/uswds/dist/fonts/*": "uswds/fonts",
+      "node_modules/uswds/dist/img/**": "uswds/img"
+    }
   }
 }
