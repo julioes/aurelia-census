@@ -1,0 +1,22 @@
+<template>
+    <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Question 1</h2>
+      <p class="usa-font-lead">
+        How many people were living or staying in this house, apartment, or mobile home on April 1, 2010?
+      </p>
+      <form class="usa-form">
+        <div class="${!displayError ? '' : 'usa-input-error'}">
+          <label for="popcount" class="${!displayError ? '' : 'usa-input-error-label'}">Number of people</label>
+          <span class="usa-input-error-message" role="alert" id="popcount-message"
+            if.bind="displayError">Please provide a positive number</span>
+          <input class="usa-input-required" id="popcount" name="popcount" type="number"
+            required="" aria-required="true" aria-describedby="popcount-message"
+            value.bind="dataStore.popCount">
+        </div>
+        <input type="submit" value="Next" click.delegate="save()"
+          class="usa-button-primary">
+      </form>
+    </div>
+  </section>
+</template>

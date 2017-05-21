@@ -7,7 +7,8 @@ export class App {
     this.router = router;
     config.title = 'U.S. Census';
     config.map([
-      { route: '', name: 'welcome', moduleId: 'welcome'}
+      { route: '', name: 'welcome', moduleId: 'welcome'},
+      { route: 'household/:question?', name: 'household', moduleId: 'household/index'},
     ]);
   }
 }
