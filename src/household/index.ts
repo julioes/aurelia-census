@@ -8,11 +8,10 @@ export class Household {
 
   question: number;
 
-  constructor(private router: Router, private dataStore: DataStore) {
-    this.isSubmitted = false;
-  }
+  constructor(private router: Router, private dataStore: DataStore) {  }
 
   activate(params: any, routeConfig: RouteConfig): Promise<any> {
+    this.isSubmitted = false;
     this.question = Number(params.question || 1);
     if (this.question < 1 || this.question > 2) {
       this.question = 1;
@@ -32,7 +31,7 @@ export class Household {
       case 1:
         return this.dataStore.popCount !== undefined && this.dataStore.popCount > 0;
       case 2:
-        return this.dataStore.additionalCount !== undefined && this.dataStore.additionalCount > 0;
+        return this.dataStore.additionalPeople !== undefined && this.dataStore.additionalPeople.length > 0;
       default:
         return false;
     }    
