@@ -9,6 +9,20 @@ export class Person {
 
   sex: string = "";
 
+  age: number;
+
+  dobMonth: number;
+
+  dobDay: number;
+
+  dobYear: number;
+
+  origin: string[] = [];
+
+  race: string[] = [];
+
+  livedElsewhere: string[];
+
   constructor (index: number) {
     this.index = index;
   }
@@ -19,5 +33,21 @@ export class Person {
 
   get isSexValid() {
     return this.sex !== "";
+  }
+
+  get isAgeValid() {
+    return true;
+  }
+
+  get isOriginValid() {
+    return true;
+  }
+
+  get isRaceValid() {
+    return true;
+  }
+
+  get isLivedElsewhereValid() {
+    return true;
   }
 }

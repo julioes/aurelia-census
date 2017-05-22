@@ -1,0 +1,106 @@
+<template>
+  <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Person ${index}</h2>
+      <p class="usa-font-lead">
+        What is Person ${index} race?
+      </p>
+      <form class="usa-form">
+        <div class="${!displayError ? '' : 'usa-input-error'}">
+          <fieldset class="usa-fieldset-inputs usa-sans">
+            <legend class="usa-sr-only">Mark one or more boxes</legend>
+            <span class="usa-input-error-message" role="alert" id="race-message"
+              if.bind="displayError">Mark one or more boxes</span>
+            <ul class="usa-unstyled-list origin-list">
+              <li>
+                <input id="white" type="checkbox" name="race" value="white"
+                  checked.bind="person.race">
+                <label for="white">White</label>
+              </li>
+              <li>
+                <input id="black" type="checkbox" name="race" value="black"
+                  checked.bind="person.race">
+                <label for="black">Black, African Am., or Negro</label>
+              </li>
+              <li>
+                <input id="native" type="checkbox" name="race" value="native"
+                  checked.bind="person.race">
+                <label for="native">American Indian or Alaska Native</label>
+              </li>
+              <li>
+                <input id="indian" type="checkbox" name="race" value="indian"
+                  checked.bind="person.race">
+                <label for="asian">Asian Indian</label>
+              </li>
+              <li>
+                <input id="chinese" type="checkbox" name="race" value="chinese"
+                  checked.bind="person.race">
+                <label for="chinese">Chinese</label>
+              </li>
+              <li>
+                <input id="filipino" type="checkbox" name="race" value="filipino"
+                  checked.bind="person.race">
+                <label for="filipino">Filipino</label>
+              </li>
+              <li>
+                <input id="japanese" type="checkbox" name="race" value="japanese"
+                  checked.bind="person.race">
+                <label for="japanese">Japanese</label>
+              </li>
+              <li>
+                <input id="korean" type="checkbox" name="race" value="korean"
+                  checked.bind="person.race">
+                <label for="korean">Korean</label>
+              </li>
+              <li>
+                <input id="vietnamese" type="checkbox" name="race" value="vietnamese"
+                  checked.bind="person.race">
+                <label for="vietnamese">Vietnamese</label>
+              </li>
+              <li>
+                <input id="hawaiian" type="checkbox" name="race" value="hawaiian"
+                  checked.bind="person.race">
+                <label for="hawaiian">Native Hawaiian</label>
+              </li>
+              <li>
+                <input id="guamanian" type="checkbox" name="race" value="guamanian"
+                  checked.bind="person.race">
+                <label for="guamanian">Guamanian or Chamorro</label>
+              </li>
+              <li>
+                <input id="samoan" type="checkbox" name="race" value="samoan"
+                  checked.bind="person.race">
+                <label for="samoan">Samoan</label>
+              </li>
+              <li>
+                <input id="islander" type="checkbox" name="race" value="islander"
+                  checked.bind="person.race">
+                <label for="islander">Other Pacific Islander</label>
+              </li>
+              <li>
+                <input id="asian" type="checkbox" name="race" value="asian"
+                  checked.bind="person.race">
+                <label for="asian">Other Asian</label>
+              </li>
+              <li>
+                <input id="other" type="checkbox" name="race" value="other"
+                  checked.bind="person.race">
+                <label for="other">Some other race</label>
+              </li>
+            </ul>
+          </fieldset>
+          <div if.bind="person.race.indexOf('other') !== -1">
+            <label for="otherRace" class="${!displayError ? '' : 'usa-input-error-label'}">
+              Print race.
+            </label>
+            <input class="usa-input-required" id="otherRace" name="otherRace" type="text"
+              required="" aria-required="true" aria-describedby="race-message"
+              value.bind="person.race">
+          </div>
+        </div>
+        <input type="submit" value="Next" click.delegate="save()"
+          class="usa-button-primary">
+      </form>
+    </div>
+  </section>
+</template>

@@ -1,0 +1,63 @@
+<template>
+  <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Person ${index}</h2>
+      <p class="usa-font-lead">
+        Does Person ${index} sometimes live or stay somewhere else?
+      </p>
+      <form class="usa-form">
+        <div class="${!displayError ? '' : 'usa-input-error'}">
+          <fieldset class="usa-fieldset-inputs usa-sans">
+            <legend class="usa-sr-only">Mark one or more boxes</legend>
+            <span class="usa-input-error-message" role="alert" id="livedElsewhere-message"
+              if.bind="displayError">Mark one or more boxes</span>
+            <ul class="usa-unstyled-list origin-list">
+              <li>
+                <input id="no" type="checkbox" name="livedElsewhere" value="no"
+                  checked.bind="person.livedElsewhere">
+                <label for="no">No</label>
+              </li>
+              <li>
+                <input id="college" type="checkbox" name="livedElsewhere" value="college"
+                  checked.bind="person.livedElsewhere">
+                <label for="college">In college housing/label>
+              </li>
+              <li>
+                <input id="military" type="checkbox" name="livedElsewhere" value="military"
+                  checked.bind="person.livedElsewhere">
+                <label for="military">In the military</label>
+              </li>
+              <li>
+                <input id="seasonal" type="checkbox" name="livedElsewhere" value="seasonal"
+                  checked.bind="person.livedElsewhere">
+                <label for="seasonal">At a seasonal or second residence</label>
+              </li>
+              <li>
+                <input id="custody" type="checkbox" name="livedElsewhere" value="custody"
+                  checked.bind="person.livedElsewhere">
+                <label for="custody">For child custody</label>
+              </li>
+              <li>
+                <input id="prison" type="checkbox" name="livedElsewhere" value="prison"
+                  checked.bind="person.livedElsewhere">
+                <label for="prison">In jail or prison</label>
+              </li>
+              <li>
+                <input id="nursing" type="checkbox" name="livedElsewhere" value="nursing"
+                  checked.bind="person.livedElsewhere">
+                <label for="nursing">In a nursing home</label>
+              </li>
+              <li>
+                <input id="other" type="checkbox" name="livedElsewhere" value="other"
+                  checked.bind="person.livedElsewhere">
+                <label for="other">For another reason</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <input type="submit" value="Next" click.delegate="save()"
+          class="usa-button-primary">
+      </form>
+    </div>
+  </section>
+</template>

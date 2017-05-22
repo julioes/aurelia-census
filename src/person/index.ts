@@ -35,6 +35,14 @@ export class DemographicPerson {
         return !this.person.isNameValid;
       case 'sex':
         return !this.person.isSexValid;
+      case 'age':
+        return !this.person.isAgeValid;
+      case 'origin':
+        return !this.person.isOriginValid;
+      case 'race':
+        return !this.person.isRaceValid;
+      case 'livedElsewhere':
+        return !this.person.isLivedElsewhereValid;
       default:
         return true;
     }
@@ -49,10 +57,32 @@ export class DemographicPerson {
         if (this.person.isNameValid) {
           this.router.navigateToRoute('person', {index: this.index, question: 'sex'});
         }
+        break;
       case 'sex':
         if (this.person.isSexValid) {
           this.router.navigateToRoute('person', {index: this.index, question: 'age'});
         }
+        break;
+      case 'age':
+        if (this.person.isAgeValid) {
+          this.router.navigateToRoute('person', {index: this.index, question: 'origin'});
+        }
+        break;
+      case 'origin':
+        if (this.person.isAgeValid) {
+          this.router.navigateToRoute('person', {index: this.index, question: 'race'});
+        }
+        break;
+      case 'race':
+        if (this.person.isAgeValid) {
+          this.router.navigateToRoute('person', {index: this.index, question: 'livedElsewhere'});
+        }
+        break;
+      case 'livedElsewhere':
+        if (this.person.isAgeValid) {
+          this.router.navigateToRoute('demographics');
+        }
+        break;
       default:
         return false;
     }
