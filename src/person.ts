@@ -21,7 +21,7 @@ export class Person {
 
   race: string[] = [];
 
-  livedElsewhere: string[];
+  livedElsewhere: string[] = [];
 
   constructor (index: number) {
     this.index = index;
