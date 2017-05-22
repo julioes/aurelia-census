@@ -11,6 +11,10 @@ export class DataStore {
 
   people: Person[] = [];
 
+  get hasNoPeople() {
+    return this.people.length === 0;
+  }
+
   getPerson(index) {
     if (index <= 0) {
       throw "invalid people index";

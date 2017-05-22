@@ -1,0 +1,44 @@
+<template>
+  <section class="usa-section">
+    <div class="usa-grid">
+      <h2>Thank you for completing the questionaire</h2>
+      <p class="usa-font-lead">
+        Here's all the data you have entered.
+      </p>
+    </div>
+    <div class="usa-grid">
+      <h2>Household</h2>
+      <p>Number of people: ${dataStore.popcount}</p>
+      <p>Additional people: ${dataStore.additionalPeople}</p>
+      <p>Home Ownership: ${dataStore.homeOwnership}</p>
+      <p>Phone Number: ${dataStore.phoneNumber}</p>
+      <h2>People</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Name</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Age</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Origin</th>
+            <th scope="col">Race</th>
+            <th scope="col">Lived Elsewhere</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr repeat.for="person of dataStore.people">
+            <th scope="row">${person.index}</th>
+            <td>${person.firstName} ${person.middleInitial} ${person.lastName}</td>
+            <td>${person.sex}</td>
+            <td>${person.age}</td>
+            <td>${person.dobMonth}/${person.dobDay}/${person.dobYear}</td>
+            <td>${person.origin}</td>
+            <td>${person.race}</td>
+            <td>${person.livedElsewhere}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</template>

@@ -7,7 +7,13 @@
         who owns or rents this house, apartment, or mobile phone. If the owner or renter lives
         somewhere else, start with any adult living here. This will be Person 1.
       </p>
-      <a class="usa-button usa-button-big" route-href="route: person; params.bind: {index: 1, question: 'name'};">Continue</a>
+      <a class="usa-button usa-button-big" if.bind="dataStore.hasNoPeople"
+        route-href="route: person; params.bind: {index: 1, question: 'name'};">Continue</a>
+      <p repeat.for="person of dataStore.people">Person ${person.index}: ${person.firstName} ${person.lastName}</p>
+      <a class="usa-button usa-button-big" if.bind="!dataStore.hasNoPeople"
+        route-href="route: person; params.bind: {index: dataStore.people.length + 1, question: 'name'};">Add Person</a>
+      <a class="usa-button usa-button-big" if.bind="!dataStore.hasNoPeople"
+        route-href="route: finish">Finish</a>
     </div>
   </section>
 </template>

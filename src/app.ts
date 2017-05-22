@@ -10,7 +10,8 @@ export class App {
       { route: '', name: 'welcome', moduleId: 'welcome'},
       { route: 'household/:question?', name: 'household', moduleId: 'household/index'},
       { route: 'demographics', name: 'demographics', moduleId: 'demographics'},
-      { route: 'person/:index?/:question?', name: 'person', moduleId: 'person/index'}
+      { route: 'person/:index?/:question?', name: 'person', moduleId: 'person/index'},
+      { route: 'finish', name: 'finish', moduleId: 'finish' }
     ]);
   }
 }
