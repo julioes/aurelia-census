@@ -2,3 +2,4 @@ An experiment in using Aurelia to recreate the 2010 Decennial Census form. https
 
 Using U.S. Web Design Standards https://standards.usa.gov/
 
+See it in action https://www.julioes.com/aurelia-census/
